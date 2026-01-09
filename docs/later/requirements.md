@@ -5,6 +5,39 @@ It is derived directly from the Product Requirements Document (PRD) and serves a
 
 ---
 
+## Stakeholders
+Role	Responsibility
+Teacher	Create exams, view results
+Student	Take exams
+Admin	System oversight (later phase)
+
+## Personas & Journeys
+Persona 1: Teacher
+- Creates exams
+- Manages students
+- Reviews results
+- Moderate technical proficiency
+
+Teacher Journey
+1. Register / log in
+2. Create an exam
+3. Add multiple-choice questions
+4. Add students (email or invite link)
+5. Publish exam
+6. View results dashboard
+
+Persona 2: Student
+- Takes exams
+- Views own results (optional)
+- Low tolerance for friction
+
+Student Journey
+1. Receive exam invitation
+2. Log in or access exam
+3. Take exam
+4. Submit answers
+5. See confirmation (and optionally score)
+
 ## 1. Functional Requirements
 
 ### FR-1: Authentication & Roles
@@ -216,4 +249,3 @@ Students can view:
 - **Status:** Draft  
 - **Source:** Product Requirements Document (PRD)
 
-This document is version-controlled and should evolve alongside the product.

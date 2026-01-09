@@ -60,3 +60,29 @@ The product is successful when:
 - Confirmation on submission
 - Explicit feedback visibility rules
 
+## Personas & Journeys
+Persona 1: Teacher
+- Creates exams
+- Manages students
+- Reviews results
+- Moderate technical proficiency
+
+Teacher Journey
+1. Register / log in
+2. Create an exam
+3. Add multiple-choice questions
+4. Add students (email or invite link)
+5. Publish exam
+6. View results dashboard
+
+Persona 2: Student
+- Takes exams
+- Views own results (optional)
+- Low tolerance for friction
+
+Student Journey
+1. Receive exam invitation
+2. Log in or access exam
+3. Take exam
+4. Submit answers
+5. See confirmation (and optionally score)

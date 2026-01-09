@@ -6,14 +6,14 @@ examineer/
 ├─ docker-compose.yml
 │
 ├─ docs/
-│  ├─ prd/
-│  │  ├─ README.md
-│  │  ├─ prd.md
-│  │  ├─ folder_structure.md
-│  │  ├─ data_model.md
-│  │  ├─ requirements.md
-│  │  ├─ api_documentation.md
-│  │  └─ glossary.md
+│  ├─ 01-summary.md
+│  ├─ 02-folder_structure.md
+│  ├─ 03-data_model.md
+│  ├─ 04-api_documentation.md
+│  ├─ 05-design_philosophy.md
+│  └─ mvp/
+│     ├─ features.md
+│     ├─ requirements.md
 │
 ├─ apps/
 │  ├─ frontend/
