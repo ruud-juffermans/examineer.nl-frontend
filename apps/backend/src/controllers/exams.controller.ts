@@ -50,6 +50,12 @@ const publish: RequestHandler = asyncHandler(async (req, res) => {
   res.json(result);
 });
 
+const unpublish: RequestHandler = asyncHandler(async (req, res) => {
+  const examId = parseInt(req.params.id!, 10);
+  const result = await examsHandler.unpublish(examId, req.user!.userId);
+  res.json(result);
+});
+
 const addQuestion: RequestHandler = asyncHandler(async (req, res) => {
   try {
     const examId = parseInt(req.params.id!, 10);
@@ -84,13 +90,21 @@ const startAttempt: RequestHandler = asyncHandler(async (req, res) => {
   res.status(201).json(result);
 });
 
+const getQuestions: RequestHandler = asyncHandler(async (req, res) => {
+  const examId = parseInt(req.params.id!, 10);
+  const questions = await examsHandler.getQuestions(examId, req.user!.userId, req.user!.role);
+  res.json(questions);
+});
+
 export const examsController = {
   create,
   list,
   getById,
   update,
   publish,
+  unpublish,
   addQuestion,
   assignStudents,
   startAttempt,
+  getQuestions,
 };

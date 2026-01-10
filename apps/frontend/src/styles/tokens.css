@@ -53,9 +53,14 @@
 :root,
 [data-theme="light"] {
   /* Primary */
-  --color-primary: #63f16f;
-  --color-primary-hover: #46e551;
-  --color-primary-soft: rgba(75, 243, 75, 0.1);
+  --color-primary: #bf63f1;
+  --color-primary-hover: #d546e5;
+  --color-primary-soft: rgba(198, 75, 243, 0.1);
+
+  /* Secondary */
+  --color-secondary: #f16363;
+  --color-secondary-hover: #e04e4e;
+  --color-secondary-soft: rgba(243, 75, 117, 0.1);
 
   /* Semantic */
   --color-success: #10b981;
@@ -66,18 +71,19 @@
   --color-danger-soft: rgba(239, 68, 68, 0.1);
 
   /* Backgrounds */
-  --color-background: #dafbff;
+  --color-background: #f4fdff;
   --color-surface: #ffffff;
-  --color-surface-hover: #f1f5f9;
+  --color-surface-hover: #26bb3c;
   --color-input: #f8fafc;
 
   /* Text */
   --color-text: #0f172a;
-  --color-text-secondary: #acafb2ee;
+  --color-text-secondary: #878a8dee;
   --color-text-muted: #94a3b8;
 
   /* Borders */
   --color-border: #e2e8f0;
+  --color-border-secondary: #eceff2;
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #f16363 0%, #8b5cf6 100%);
@@ -93,6 +99,11 @@
   --color-primary-hover: #a5b4fc;
   --color-primary-soft: rgba(129, 140, 248, 0.15);
 
+    /* Secondary */
+  --color-secondary: #f16363;
+  --color-secondary-hover: #e04e4e;
+  --color-secondary-soft: rgba(243, 75, 117, 0.1);
+
   /* Semantic */
   --color-success: #34d399;
   --color-success-soft: rgba(52, 211, 153, 0.15);
@@ -102,8 +113,8 @@
   --color-danger-soft: rgba(248, 113, 113, 0.15);
 
   /* Backgrounds */
-  --color-background: #111111;
-  --color-surface: #181818;
+  --color-background: #161616;
+  --color-surface: #212020;
   --color-surface-hover: #334155;
   --color-input: #ffffff0d;
 
@@ -114,9 +125,10 @@
 
   /* Borders */
   --color-border: #383838;
+  --color-border-secondary: #282828;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #157e0b 0%, #ef7f7f 100%);
+  --gradient-primary: linear-gradient(135deg, #7e0b7e 0%, #ee7878 100%);
   --gradient-secondary: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 
   /* Shadows (adjusted for dark mode) */

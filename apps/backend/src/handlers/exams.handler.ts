@@ -81,6 +81,23 @@ async function publish(examId: number, teacherId: number) {
   return examsRepository.publish(examId);
 }
 
+async function unpublish(examId: number, teacherId: number) {
+  const exam = await examsRepository.findById(examId);
+  if (!exam) {
+    throw notFound('Exam not found');
+  }
+
+  if (exam.teacherId !== teacherId) {
+    throw forbidden('You do not have access to this exam');
+  }
+
+  if (exam.status !== 'published') {
+    throw badRequest('Exam is not published', 'NOT_PUBLISHED');
+  }
+
+  return examsRepository.unpublish(examId);
+}
+
 async function addQuestion(examId: number, teacherId: number, data: CreateQuestionDto) {
   const exam = await examsRepository.findById(examId);
   if (!exam) {
@@ -147,13 +164,35 @@ async function startAttempt(examId: number, studentId: number) {
   return { attemptId: attempt.id };
 }
 
+async function getQuestions(examId: number, userId: number, role: 'teacher' | 'student') {
+  const exam = await examsRepository.findById(examId);
+  if (!exam) {
+    throw notFound('Exam not found');
+  }
+
+  if (role === 'teacher' && exam.teacherId !== userId) {
+    throw forbidden('You do not have access to this exam');
+  }
+
+  if (role === 'student') {
+    const isAssigned = await examsRepository.isStudentAssigned(examId, userId);
+    if (!isAssigned) {
+      throw forbidden('You are not assigned to this exam');
+    }
+  }
+
+  return questionsRepository.findByExamWithOptions(examId);
+}
+
 export const examsHandler = {
   create,
   list,
   getById,
   update,
   publish,
+  unpublish,
   addQuestion,
   assignStudents,
   startAttempt,
+  getQuestions,
 };

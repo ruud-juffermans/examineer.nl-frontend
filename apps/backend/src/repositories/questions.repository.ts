@@ -162,9 +162,27 @@ async function getOptions(questionId: number): Promise<QuestionOption[]> {
   );
 }
 
+interface QuestionWithOptions extends Question {
+  options: QuestionOption[];
+}
+
+async function findByExamWithOptions(examId: number): Promise<QuestionWithOptions[]> {
+  const questions = await findByExam(examId);
+
+  const questionsWithOptions: QuestionWithOptions[] = await Promise.all(
+    questions.map(async (question) => {
+      const options = await getOptions(question.id);
+      return { ...question, options };
+    })
+  );
+
+  return questionsWithOptions;
+}
+
 export const questionsRepository = {
   findById,
   findByExam,
+  findByExamWithOptions,
   countByExam,
   getNextPosition,
   create,

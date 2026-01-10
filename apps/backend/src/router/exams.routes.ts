@@ -12,8 +12,10 @@ examsRouter.use(authenticate);
 examsRouter.post('/', requireRole('teacher'), examsController.create);
 examsRouter.get('/', examsController.list);
 examsRouter.get('/:id', examsController.getById);
+examsRouter.get('/:id/questions', examsController.getQuestions);
 examsRouter.put('/:id', requireRole('teacher'), examsController.update);
 examsRouter.post('/:id/publish', requireRole('teacher'), examsController.publish);
+examsRouter.post('/:id/unpublish', requireRole('teacher'), examsController.unpublish);
 examsRouter.post('/:id/questions', requireRole('teacher'), examsController.addQuestion);
 examsRouter.post('/:id/assign', requireRole('teacher'), examsController.assignStudents);
 
