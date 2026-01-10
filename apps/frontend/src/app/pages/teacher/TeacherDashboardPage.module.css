@@ -3,7 +3,17 @@
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: var(--spacing-8);
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.headerText {
+  flex: 1;
+  min-width: 200px;
 }
 
 .title {
@@ -15,6 +25,28 @@
 
 .subtitle {
   color: var(--color-text-secondary);
+}
+
+.createButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.createButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.createButton .material-icons-outlined {
+  font-size: 20px;
 }
 
 .stats {
@@ -59,11 +91,37 @@
   margin-bottom: var(--spacing-8);
 }
 
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
 .sectionTitle {
   font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: var(--spacing-4);
+  margin: 0;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.viewAllLink:hover {
+  gap: var(--spacing-2);
+}
+
+.viewAllLink .material-icons-outlined {
+  font-size: 16px;
 }
 
 .emptyState {
@@ -82,4 +140,30 @@
   font-size: 48px;
   margin-bottom: var(--spacing-4);
   opacity: 0.5;
+}
+
+.emptyState > p {
+  margin-bottom: var(--spacing-4);
+}
+
+.emptyStateButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.emptyStateButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.emptyStateButton .material-icons-outlined {
+  font-size: 20px;
 }

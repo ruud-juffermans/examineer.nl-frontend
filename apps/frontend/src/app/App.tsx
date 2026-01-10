@@ -8,6 +8,8 @@ import { RegisterPage } from '@/app/pages/public/RegisterPage';
 
 // Teacher pages
 import { TeacherDashboardPage } from '@/app/pages/teacher/TeacherDashboardPage';
+import { ExamListPage } from '@/app/pages/teacher/ExamListPage';
+import { CreateExamPage } from '@/app/pages/teacher/CreateExamPage';
 
 // Student pages
 import { StudentDashboardPage } from '@/app/pages/student/StudentDashboardPage';
@@ -62,7 +64,8 @@ export function App() {
         }
       >
         <Route index element={<TeacherDashboardPage />} />
-        {/* More teacher routes will be added here */}
+        <Route path="exams" element={<ExamListPage />} />
+        <Route path="exams/create" element={<CreateExamPage />} />
       </Route>
 
       {/* Student routes */}
