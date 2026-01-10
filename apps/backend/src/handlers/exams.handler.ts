@@ -32,11 +32,8 @@ async function getById(examId: number, userId: number, role: 'teacher' | 'studen
     throw forbidden('You do not have access to this exam');
   }
 
-  if (role === 'student') {
-    const isAssigned = await examsRepository.isStudentAssigned(examId, userId);
-    if (!isAssigned) {
-      throw forbidden('You are not assigned to this exam');
-    }
+  if (role === 'student' && exam.status !== 'published') {
+    throw forbidden('This exam is not available');
   }
 
   return exam;
@@ -146,11 +143,6 @@ async function startAttempt(examId: number, studentId: number) {
     throw badRequest('This exam is not available', 'EXAM_NOT_AVAILABLE');
   }
 
-  const isAssigned = await examsRepository.isStudentAssigned(examId, studentId);
-  if (!isAssigned) {
-    throw forbidden('You are not assigned to this exam');
-  }
-
   const existingAttempt = await attemptsRepository.findByExamAndStudent(examId, studentId);
   if (existingAttempt) {
     throw badRequest('You have already taken this exam', 'ALREADY_ATTEMPTED');
@@ -174,11 +166,8 @@ async function getQuestions(examId: number, userId: number, role: 'teacher' | 's
     throw forbidden('You do not have access to this exam');
   }
 
-  if (role === 'student') {
-    const isAssigned = await examsRepository.isStudentAssigned(examId, userId);
-    if (!isAssigned) {
-      throw forbidden('You are not assigned to this exam');
-    }
+  if (role === 'student' && exam.status !== 'published') {
+    throw forbidden('This exam is not available');
   }
 
   return questionsRepository.findByExamWithOptions(examId);
