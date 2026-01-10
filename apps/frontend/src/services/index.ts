@@ -11,3 +11,9 @@ export type {
   CreateQuestionOptionData,
   UpdateQuestionData,
 } from './question.service';
+export { assignmentService } from './assignment.service';
+export type {
+  AvailableExam,
+  ExamStatus as AvailableExamStatus,
+  AvailableExamsResponse,
+} from './assignment.service';
