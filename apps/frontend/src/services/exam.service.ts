@@ -42,6 +42,9 @@ export const examService = {
   publish: (id: number) =>
     api.post<Exam>(`/exams/${id}/publish`),
 
+  unpublish: (id: number) =>
+    api.post<Exam>(`/exams/${id}/unpublish`),
+
   delete: (id: number) =>
     api.delete<void>(`/exams/${id}`),
 };

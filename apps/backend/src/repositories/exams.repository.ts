@@ -116,6 +116,22 @@ async function publish(id: number): Promise<Exam> {
   return result;
 }
 
+async function unpublish(id: number): Promise<Exam> {
+  const result = await queryOne<Exam>(
+    `UPDATE exams SET status = 'draft', published_at = NULL, updated_at = NOW()
+     WHERE id = $1
+     RETURNING id, teacher_id as "teacherId", title, description, status,
+               published_at as "publishedAt", created_at as "createdAt", updated_at as "updatedAt"`,
+    [id]
+  );
+
+  if (!result) {
+    throw new Error('Failed to unpublish exam');
+  }
+
+  return result;
+}
+
 async function isStudentAssigned(examId: number, studentId: number): Promise<boolean> {
   const result = await queryOne<{ exists: boolean }>(
     `SELECT EXISTS(SELECT 1 FROM exam_assignments WHERE exam_id = $1 AND student_id = $2) as exists`,
@@ -143,6 +159,7 @@ export const examsRepository = {
   create,
   update,
   publish,
+  unpublish,
   isStudentAssigned,
   assignStudents,
 };

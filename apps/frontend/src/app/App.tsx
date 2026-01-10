@@ -10,6 +10,7 @@ import { RegisterPage } from '@/app/pages/public/RegisterPage';
 import { TeacherDashboardPage } from '@/app/pages/teacher/TeacherDashboardPage';
 import { ExamListPage } from '@/app/pages/teacher/ExamListPage';
 import { CreateExamPage } from '@/app/pages/teacher/CreateExamPage';
+import { ExamDetailPage } from '@/app/pages/teacher/ExamDetailPage';
 
 // Student pages
 import { StudentDashboardPage } from '@/app/pages/student/StudentDashboardPage';
@@ -66,6 +67,7 @@ export function App() {
         <Route index element={<TeacherDashboardPage />} />
         <Route path="exams" element={<ExamListPage />} />
         <Route path="exams/create" element={<CreateExamPage />} />
+        <Route path="exams/:examId" element={<ExamDetailPage />} />
       </Route>
 
       {/* Student routes */}
