@@ -1,31 +1,217 @@
+/* ========================================
+   Public Layout Styles
+   ======================================== */
+
 .layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--color-background);
 }
 
+/* ========================================
+   Header
+   ======================================== */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   padding: var(--spacing-4) var(--spacing-6);
+  background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+}
+
+.headerTransparent {
+  background: transparent;
+  border-bottom: none;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
   font-size: var(--font-size-xl);
-  font-weight: 600;
-  color: var(--color-primary);
+  font-weight: 700;
+  color: var(--color-text);
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logo .material-icons-outlined {
+  font-size: 28px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.navLink {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.navButtonPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-4);
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
 .main {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+/* ========================================
+   Footer
+   ======================================== */
 .footer {
-  padding: var(--spacing-4) var(--spacing-6);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-12) var(--spacing-6) var(--spacing-6);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-10);
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.footerLogo .material-icons-outlined {
+  font-size: 24px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footerBrand p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+.footerLinks {
+  display: flex;
+  gap: var(--spacing-12);
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .footerLinks {
+    justify-content: flex-start;
+    gap: var(--spacing-8);
+  }
+}
+
+.footerLinkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.footerLinkGroup h4 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footerLinkGroup a {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLinkGroup a:hover {
+  color: var(--color-primary);
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: var(--spacing-8) auto 0;
+  padding-top: var(--spacing-6);
   border-top: 1px solid var(--color-border);
   text-align: center;
-  color: var(--color-text-muted);
+}
+
+.footerBottom p {
   font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: 0;
 }

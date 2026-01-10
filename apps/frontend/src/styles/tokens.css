@@ -53,9 +53,9 @@
 :root,
 [data-theme="light"] {
   /* Primary */
-  --color-primary: #6366f1;
-  --color-primary-hover: #4f46e5;
-  --color-primary-soft: rgba(99, 102, 241, 0.1);
+  --color-primary: #63f16f;
+  --color-primary-hover: #46e551;
+  --color-primary-soft: rgba(75, 243, 75, 0.1);
 
   /* Semantic */
   --color-success: #10b981;
@@ -66,28 +66,28 @@
   --color-danger-soft: rgba(239, 68, 68, 0.1);
 
   /* Backgrounds */
-  --color-background: #f8fafc;
+  --color-background: #dafbff;
   --color-surface: #ffffff;
   --color-surface-hover: #f1f5f9;
   --color-input: #f8fafc;
 
   /* Text */
   --color-text: #0f172a;
-  --color-text-secondary: #475569;
+  --color-text-secondary: #acafb2ee;
   --color-text-muted: #94a3b8;
 
   /* Borders */
   --color-border: #e2e8f0;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-primary: linear-gradient(135deg, #f16363 0%, #8b5cf6 100%);
   --gradient-secondary: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
 }
 
 /* ========================================
    Dark Theme
    ======================================== */
-[data-theme="dark"] {
+[data-theme="light"] {
   /* Primary */
   --color-primary: #818cf8;
   --color-primary-hover: #a5b4fc;
@@ -102,21 +102,21 @@
   --color-danger-soft: rgba(248, 113, 113, 0.15);
 
   /* Backgrounds */
-  --color-background: #0f172a;
-  --color-surface: #1e293b;
+  --color-background: #111111;
+  --color-surface: #181818;
   --color-surface-hover: #334155;
-  --color-input: #1e293b;
+  --color-input: #ffffff0d;
 
   /* Text */
   --color-text: #f8fafc;
-  --color-text-secondary: #cbd5e1;
+  --color-text-secondary: #656565;
   --color-text-muted: #64748b;
 
   /* Borders */
-  --color-border: #334155;
+  --color-border: #383838;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-primary: linear-gradient(135deg, #157e0b 0%, #ef7f7f 100%);
   --gradient-secondary: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 
   /* Shadows (adjusted for dark mode) */
